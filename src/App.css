@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+/* src/App.css */
+
+/* We define styles for the main chat window. */
+.chat-window {
+  background-color: #f8f9fa;
+  /* This calculation ensures the chat window fills the remaining vertical space. */
+  max-height: calc(100vh - 120px);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Base styles for a chat message container. */
+.message {
+  max-width: 80%;
+  margin-bottom: 10px;
+  clear: both; /* Prevents floating elements from wrapping around. */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Styles specific to a user's message. */
+.user-message {
+  float: right; /* Aligns the message to the right side of the container. */
+  background-color: #0d6efd; /* A blue color from Bootstrap's theme. */
   color: white;
+  border-radius: 10px 10px 0 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Styles specific to the AI's message. */
+.assistant-message {
+  float: left; /* Aligns the message to the left. */
+  background-color: #e9ecef; /* A light gray color. */
+  color: #333;
+  border-radius: 10px 10px 10px 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Styles for the text content within a message. */
+.message-content {
+  font-size: 0.95rem;
+}
+
+/* This block of CSS is crucial for the full-height layout.
+It ensures that the entire application container (`html`, `body`, `#root`)
+takes up 100% of the viewport height. */
+html, body, #root, .container-fluid, .row {
+  height: 100%;
 }
